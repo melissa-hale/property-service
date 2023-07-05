@@ -4,9 +4,23 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/flaskAPI/v1/properties')
 def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+    propertyList = [{
+        "address": "123 Main",
+        "bedrooms": 3,
+        "bathrooms": 1
+    }, {
+        "address": "456 Walnut",
+        "bedrooms": 2,
+        "bathrooms": 2
+    },
+    {
+        "address": "901 Walnut",
+        "bedrooms": 3,
+        "bathrooms": 2
+    }]
+    return jsonify(propertyList)
 
 
 if __name__ == '__main__':
